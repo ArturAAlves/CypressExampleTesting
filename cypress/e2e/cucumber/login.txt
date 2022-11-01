@@ -8,7 +8,7 @@ Feature: Facebook Login
 
     I want gherkin scenarios be logged into allure
 
-    Scenario: Sucessfull facebook registration
+    Scenario: Sucessfully Login in Facebook
         Given I access "https://www.facebook.com/" page registration Sucessfully
         When I fill the form with valid data and click registration button
         And I recieve and confirm the registration confirmation email
