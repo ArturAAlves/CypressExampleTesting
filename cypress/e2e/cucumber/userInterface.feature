@@ -8,11 +8,10 @@ Feature: Saucedemo Login
 
     I want gherkin scenarios be logged into allure
 
-    Scenario: Sucessfully Login and Logout
+    Scenario: Sucessfully Login
         Given I access "https://www.saucedemo.com" page Sucessfully
         When I fill username field with "standard_user" and and password field "secret_sauce" and click login btn
-        And I should land Sucessfully on "https://www.saucedemo.com/inventory.html"
-        Then I click logout and return to main page
+        Then I should land Sucessfully on "https://www.saucedemo.com/inventory.html"
 
     Scenario: Try login with wrong username
         Given I access "https://www.saucedemo.com" page Sucessfully

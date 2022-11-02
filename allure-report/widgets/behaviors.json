@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"d10991da398ff0a51134bb2cb65b1f0a","name":"Behaviours_epic","statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1}}]}
+{"total":2,"items":[{"uid":"d10991da398ff0a51134bb2cb65b1f0a","name":"Behaviours_epic","statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1}},{"uid":"8904cc3c0002cad78ba0d9269c9b0cdc","name":"Saucedemo_login","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}

@@ -42,8 +42,8 @@ Feature: Gherkin_feature
             | TEST-CASE-1 | TASK-1 |
             | TEST-CASE-2 | TASK-2 |
 
-    Scenario: Sucessfull facebook registration
-        Given I access facebook page registration Sucessfully
-        When I fill the form with valid data and click registration button
-        When I recieve and confirm the registration confirmation email
-        Then I the Registration should be complete and i will be redirected to user page
+# Scenario: Sucessfull facebook registration
+#   Given I access facebook page registration Sucessfully
+#   When I fill the form with valid data and click registration button
+#  When I recieve and confirm the registration confirmation email
+#  Then I the Registration should be complete and i will be redirected to user page
