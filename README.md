@@ -13,24 +13,24 @@ This project is a concept Login test scenario using facebook as example . As fra
 ## Architecture:
 ```
 ├─ cypress
-│  ├─ e2e
-│  │  ├─ cucumber
-│  │  │  ├─ examples
-│  │  │  │  └─ steps.js
-│  │  │  ├─ examples.feature
-│  │  │  ├─ login
-│  │  │  │  ├─ steps.js
-│  │  │  ├─ login.feature
-│  │  │  └─ userArea.feature
-│  │  └─ examples
-│  ├─ fixtures
-│  ├─ page-objects
-│  │  └─ pages
-│  │     ├─ BasePage.js
-│  │     └─ LoginPage.js
-│  └─ support
-│     ├─ commands.js
-│     └─ e2e.js
+  ├─ e2e
+  │  ├─ cucumber
+  │  │  ├─ examples
+  │  │  │  └─ steps.js
+  │  │  ├─ examples.feature
+  │  │  ├─ login
+  │  │  │  ├─ steps.js
+  │  │  ├─ login.feature
+  │  │  └─ userArea.feature
+  │  └─ examples
+  ├─ fixtures
+  ├─ page-objects
+  │  └─ pages
+  │     ├─ BasePage.js
+  │     └─ LoginPage.js
+  └─ support
+     ├─ commands.js
+     └─ e2e.js
 
 ```
     
