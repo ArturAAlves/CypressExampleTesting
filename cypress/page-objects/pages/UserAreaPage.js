@@ -24,7 +24,7 @@ function checkError(error) {
     cy.get(errorBox).should('contain', error);
 }
 
-class LoginPage {
+class UserAreaPage {
     visit(url) {
         cy.visit(url);
     }
@@ -54,25 +54,6 @@ class LoginPage {
         cy.get(usernameInput).type(usernameData);
         cy.get(passwordInput).type(passwordData);
         cy.get(loginBtn).click();
-
-        /*       switch ((usernameData, passwordData)) {
-            case !usernameData:
-                cy.get(passwordInput).type(passwordData);
-                break;
-            case !passwordData:
-                cy.get(usernameInput).type(usernameData);
-                break;
-            case !passwordData & !usernameData:
-                cy.get(usernameInput).type(usernameData);
-                break;
-            case usernameData & passwordData:
-                cy.get(usernameInput).type(usernameData);
-                cy.get(passwordInput).type(passwordData);
-                break;
-
-            default:
-                cy.log(usernameData, passwordData);
-        } */
     }
 
     checkWrongUsername() {
@@ -95,10 +76,7 @@ class LoginPage {
         checkError(errorMessages.lockedOutUsernameErrorMessage);
     }
 
-    logout() {
-        cy.get(menuBtn).click();
-        cy.get(logoutBtn).click();
-    }
+    logout() {}
 }
 
-module.exports = new LoginPage();
+module.exports = new UserAreaPage();

@@ -1,10 +1,9 @@
 
 @parentSuite("Saucedemo")
-@suite("Saucedemo_login")
+@suite("SaucedemoE2E")
 @epic("Saucedemo_login")
 @story("Behaviours_story")
 Feature: Saucedemo Login
-
 
     I want gherkin scenarios be logged into allure
 
@@ -12,7 +11,7 @@ Feature: Saucedemo Login
         Given I access "https://www.saucedemo.com" page Sucessfully
         When I fill username field with "standard_user" and and password field "secret_sauce" and click login btn
         And I should land Sucessfully on "https://www.saucedemo.com/inventory.html"
-        Then I click logout and return to main page
+        Then I click logout and successfully return to "https://www.saucedemo.com"
 
     Scenario: Try login with wrong username
         Given I access "https://www.saucedemo.com" page Sucessfully

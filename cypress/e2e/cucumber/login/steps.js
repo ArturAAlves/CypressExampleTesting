@@ -39,9 +39,7 @@ Then('I should get error stating username is locked out', () => {
     loginPage.checUserLockedOut();
 });
 
-/* Then('I should take longer than usual to log in', () => {
-    (username, password) => {
-        loginPage.fillLogin(username, password);
-    };
+Then('I click logout and successfully return to {string}', (url) => {
+    loginPage.logout();
+    loginPage.verifyUrl(url);
 });
- */
