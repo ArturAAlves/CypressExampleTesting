@@ -10,3 +10,14 @@ This project is a concept Login test scenario using facebook as example . As fra
 -   generate allure report: `npm run allure:report`
 -   open report: `allure open`
 
+## Architecture:
+Cypress ----- E2E ----- login.feature <br/>
+                  ----- login ----- steps.js <br/>
+                  ----- examples.feature <br/>
+                  ----- examples ----- steps.js <br/>
+
+
+
+
+
+        ----- page-objects -----
