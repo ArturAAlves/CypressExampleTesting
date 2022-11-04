@@ -11,13 +11,27 @@ This project is a concept Login test scenario using facebook as example . As fra
 -   open report: `allure open`
 
 ## Architecture:
-Cypress ----- E2E ----- login.feature <br/>
-                  ----- login ----- steps.js <br/>
-                  ----- examples.feature <br/>
-                  ----- examples ----- steps.js <br/>
+```
+├─ cypress
+│  ├─ e2e
+│  │  ├─ cucumber
+│  │  │  ├─ examples
+│  │  │  │  └─ steps.js
+│  │  │  ├─ examples.feature
+│  │  │  ├─ login
+│  │  │  │  ├─ steps.js
+│  │  │  ├─ login.feature
+│  │  │  └─ userArea.feature
+│  │  └─ examples
+│  ├─ fixtures
+│  ├─ page-objects
+│  │  └─ pages
+│  │     ├─ BasePage.js
+│  │     └─ LoginPage.js
+│  └─ support
+│     ├─ commands.js
+│     └─ e2e.js
 
+```
+    
 
-
-
-
-        ----- page-objects -----
