@@ -1,82 +1,80 @@
 //selectors
-const usernameInput = '#user-name';
-const passwordInput = '#password';
-const loginBtn = '#login-button';
-const errorBox = '[data-test=error]';
-const errorBtn = '.error-button';
-const menuBtn = '#react-burger-menu-btn';
-const logoutBtn = '#logout_sidebar_link';
+
+const cartBtn = '.shopping_cart_link';
+const checkoutBtn = '#checkout';
+const firstNameInputField = '#first-name';
+const lastNameInputField = '#last-name';
+const postalCodeInputField = '#postal-code';
+const continueBtn = '#continue';
+const finishBtn = '#finish';
+const completeMessage = '.complete-header';
+const checkoutBackHomeBtn = '#back-to-products';
+const cartItemsNumber = '.shopping_cart_badge';
+const removeBtn = 'Remove';
+const carItem = '.cart_item';
 
 //error list
-const errorMessages = {
-    wrongUsernameErrorMessage:
-        'Epic sadface: Username and password do not match any user in this service',
-    emptyPasswordErrorMessage: 'Epic sadface: Password is required',
-    emptyUsernameErrorMessage: 'Epic sadface: Username is required',
-    emptyUsernameAndPasswordErrorMessage:
-        'Epic sadface: Username and Password are required',
-    lockedOutUsernameErrorMessage:
-        'Epic sadface: Sorry, this user has been locked out.'
-};
+const messages = {};
 
 //helper functions
-function checkError(error) {
-    cy.get(errorBox).should('contain', error);
-}
 
 class UserAreaPage {
-    visit(url) {
-        cy.visit(url);
+    addItemToCart(item) {
+        cy.contains(item).parent().parent().contains('Add to cart').click();
     }
 
-    verifyUrl(url) {
-        cy.url().should('contain', url);
+    removeItemFromCart(item) {
+        cy.contains(item).parent().parent().contains(removeBtn).click();
     }
 
-    fillLogin(usernameData, passwordData) {
-        if (!passwordData & !usernameData) {
-            cy.get(loginBtn).click();
-            return;
-        }
-
-        if (!usernameData) {
-            cy.get(passwordInput).type(passwordData);
-            cy.get(loginBtn).click();
-            return;
-        }
-
-        if (!passwordData) {
-            cy.get(usernameInput).type(usernameData);
-            cy.get(loginBtn).click();
-            return;
-        }
-
-        cy.get(usernameInput).type(usernameData);
-        cy.get(passwordInput).type(passwordData);
-        cy.get(loginBtn).click();
+    clickCartBtn() {
+        cy.get(cartBtn).click();
     }
 
-    checkWrongUsername() {
-        checkError(errorMessages.wrongUsernameErrorMessage);
+    checkvisibility() {
+        cy.get(checkoutBtn).should('be.visible');
     }
 
-    checkEmptyUsername() {
-        checkError(errorMessages.emptyUsernameErrorMessage);
+    clickCheckoutBtn() {
+        cy.get(checkoutBtn).click();
     }
 
-    checkEmptyPassword() {
-        checkError(errorMessages.emptyPasswordErrorMessage);
+    fillCheckoutInformationForm(firstName, lastName, postalCode) {
+        cy.get(firstNameInputField).type(firstName);
+        cy.get(lastNameInputField).type(lastName);
+        cy.get(postalCodeInputField).type(postalCode);
     }
 
-    checkEmptyUsernameAndPassword() {
-        checkError(errorMessages.emptyUsernameAndPasswordErrorMessage);
+    clickContinueBtn() {
+        cy.get(continueBtn).click();
     }
 
-    checUserLockedOut() {
-        checkError(errorMessages.lockedOutUsernameErrorMessage);
+    clickFinishBtn() {
+        cy.get(finishBtn).click();
     }
 
-    logout() {}
+    confirmCheckoutMessage(message) {
+        cy.get(completeMessage).should('contain', message);
+    }
+
+    clickCheckoutBackHomeBtn() {
+        cy.get(checkoutBackHomeBtn).click();
+    }
+
+    checkItemsInCart(itemNUmber) {
+        cy.get(cartItemsNumber).should('contain.text', itemNUmber);
+    }
+
+    checkNumberOfItemsInCartPage(itemNumber) {
+        cy.get(carItem).should('have.length', itemNumber);
+    }
+
+    checkNameOfitemsInCartPage([...args]) {
+        cy.log(args);
+        args.map((item) => {
+            cy.get('.inventory_item_name').should('contain', item);
+        });
+    }
 }
 
 module.exports = new UserAreaPage();
