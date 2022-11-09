@@ -1,7 +1,7 @@
 //selectors
-const usernameInput = '#user-name';
-const passwordInput = '#password';
-const loginBtn = '#login-button';
+
+import Basepage from './BasePage';
+
 const errorBox = '[data-test=error]';
 const errorBtn = '.error-button';
 const menuBtn = '#react-burger-menu-btn';
@@ -24,57 +24,7 @@ function checkError(error) {
     cy.get(errorBox).should('contain', error);
 }
 
-class LoginPage {
-    visit(url) {
-        cy.visit(url);
-    }
-
-    verifyUrl(url) {
-        cy.url().should('contain', url);
-    }
-
-    fillLogin(usernameData, passwordData) {
-        if (!passwordData & !usernameData) {
-            cy.get(loginBtn).click();
-            return;
-        }
-
-        if (!usernameData) {
-            cy.get(passwordInput).type(passwordData);
-            cy.get(loginBtn).click();
-            return;
-        }
-
-        if (!passwordData) {
-            cy.get(usernameInput).type(usernameData);
-            cy.get(loginBtn).click();
-            return;
-        }
-
-        cy.get(usernameInput).type(usernameData);
-        cy.get(passwordInput).type(passwordData);
-        cy.get(loginBtn).click();
-
-        /*       switch ((usernameData, passwordData)) {
-            case !usernameData:
-                cy.get(passwordInput).type(passwordData);
-                break;
-            case !passwordData:
-                cy.get(usernameInput).type(usernameData);
-                break;
-            case !passwordData & !usernameData:
-                cy.get(usernameInput).type(usernameData);
-                break;
-            case usernameData & passwordData:
-                cy.get(usernameInput).type(usernameData);
-                cy.get(passwordInput).type(passwordData);
-                break;
-
-            default:
-                cy.log(usernameData, passwordData);
-        } */
-    }
-
+class LoginPage extends Basepage {
     checkWrongUsername() {
         checkError(errorMessages.wrongUsernameErrorMessage);
     }
@@ -101,4 +51,4 @@ class LoginPage {
     }
 }
 
-module.exports = new LoginPage();
+export default new LoginPage();

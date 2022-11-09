@@ -20,7 +20,8 @@ const messages = {};
 
 //helper functions
 
-class UserAreaPage {
+import Basepage from './BasePage';
+class UserAreaPage extends Basepage {
     addItemToCart(item) {
         cy.contains(item).parent().parent().contains('Add to cart').click();
     }
@@ -98,4 +99,4 @@ class UserAreaPage {
     }
 }
 
-module.exports = new UserAreaPage();
+export default new UserAreaPage();

@@ -1,45 +1,45 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
-const loginPage = require('../../../page-objects/pages/LoginPage');
+import LoginPage from '../../../page-objects/pages/LoginPage';
 
 Given('I access {string} page Sucessfully', (url) => {
-    loginPage.visit(url);
+    LoginPage.visit(url);
 });
 
 When(
     'I fill username field with {string} and and password field {string} and click login btn',
     (username, password) => {
-        loginPage.fillLogin(username, password);
+        LoginPage.fillLogin(username, password);
     }
 );
 
 Then('I should land Sucessfully on {string}', (url) => {
-    loginPage.verifyUrl(url);
+    LoginPage.verifyUrl(url);
 });
 
 Then('I should get error stating user and password do not match', () => {
-    loginPage.checkWrongUsername();
+    LoginPage.checkWrongUsername();
 });
 
 Then('I should get error stating username field is empty', () => {
-    loginPage.checkEmptyUsername();
+    LoginPage.checkEmptyUsername();
 });
 
 Then('I should get error stating password field is empty', () => {
-    loginPage.checkEmptyPassword();
+    LoginPage.checkEmptyPassword();
 });
 
 Then(
     'I should get error stating username field and password field are empty',
     () => {
-        loginPage.checkEmptyUsernameAndPassword();
+        LoginPage.checkEmptyUsernameAndPassword();
     }
 );
 
 Then('I should get error stating username is locked out', () => {
-    loginPage.checUserLockedOut();
+    LoginPage.checUserLockedOut();
 });
 
 Then('I click logout and successfully return to {string}', (url) => {
-    loginPage.logout();
-    loginPage.verifyUrl(url);
+    LoginPage.logout();
+    LoginPage.verifyUrl(url);
 });

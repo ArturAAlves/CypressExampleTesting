@@ -25,5 +25,8 @@
     },
     "cypress-cucumber-preprocessor": {
         "nonGlobalStepDefinitions": true
+    },
+    "dependencies": {
+        "@babel/core": "^7.20.2"
     }
 }

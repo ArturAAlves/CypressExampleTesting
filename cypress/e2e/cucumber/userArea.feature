@@ -8,6 +8,8 @@ Feature: User area features
 
     I want gherkin scenarios be logged into allure
 
+
+
     Scenario: Suceessfully Complete an order
         Given I visit "https://www.saucedemo.com/" and log in successfully with username "standard_user" and password "secret_sauce"
         When I click add to cart on item "Sauce Labs Backpack"
