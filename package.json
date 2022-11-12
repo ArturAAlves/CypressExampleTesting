@@ -13,7 +13,9 @@
         "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true",
         "cypress:run": "npx cypress run --env allure=true ",
         "cy:test": "npx cypress run --env allure=true --config specPattern=cypress/e2e/examples/test.cy.js",
-        "cy:cucumber:cucumber": "npx cypress run --config specPattern=cypress/e2e/cucumber/*.feature,excludeSpecPattern=*.js --env allure=true"
+        "cy:cucumber:cucumber": "npx cypress run --config specPattern=cypress/e2e/cucumber/*.feature,excludeSpecPattern=*.js --env allure=true",
+        "s:jenkins": "java -jar jenkins.war --enable-future-java",
+        "cy:jenkins": "npx cypress run --spec cypress/e2e/cucumber/testss.feature --env allure=true --browser chrome"
     },
     "devDependencies": {
         "@badeball/cypress-cucumber-preprocessor": "12.1.0",

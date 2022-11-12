@@ -1,1 +1,1 @@
-[{"data":{"Product defects":2}}]
+[{"buildOrder":16,"reportUrl":"http://localhost:8080/job/cypress%20allure/16/allure","reportName":"AllureReport","data":{}},{"buildOrder":14,"reportUrl":"http://localhost:8080/job/cypress%20allure/14/allure","reportName":"AllureReport","data":{"Product defects":8}}]

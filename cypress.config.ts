@@ -7,7 +7,6 @@ const {
 
 module.exports = defineConfig({
     e2e: {
-
         chromeWebSecurity: false,
         specPattern: 'cypress/e2e/**/*.feature',
         setupNodeEvents: async function (on, config) {

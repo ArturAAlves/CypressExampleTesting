@@ -1,1 +1,1 @@
-[{"data":{"failed":2,"broken":0,"skipped":0,"passed":8,"unknown":0,"total":10}}]
+[{"buildOrder":16,"reportUrl":"http://localhost:8080/job/cypress%20allure/16/allure","reportName":"AllureReport","data":{"failed":0,"broken":0,"skipped":0,"passed":5,"unknown":0,"total":5}},{"buildOrder":14,"reportUrl":"http://localhost:8080/job/cypress%20allure/14/allure","reportName":"AllureReport","data":{"failed":8,"broken":0,"skipped":0,"passed":20,"unknown":0,"total":28}}]
