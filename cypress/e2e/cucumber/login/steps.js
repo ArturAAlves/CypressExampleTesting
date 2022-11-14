@@ -12,30 +12,27 @@ When(
     }
 );
 
-Then('I should land Sucessfully on {string}', (url) => {
+Then('I land Sucessfully on {string}', (url) => {
     LoginPage.verifyUrl(url);
 });
 
-Then('I should get error stating user and password do not match', () => {
+Then('I get error stating user and password do not match', () => {
     LoginPage.checkWrongUsername();
 });
 
-Then('I should get error stating username field is empty', () => {
+Then('I get error stating username field is empty', () => {
     LoginPage.checkEmptyUsername();
 });
 
-Then('I should get error stating password field is empty', () => {
+Then('I get error stating password field is empty', () => {
     LoginPage.checkEmptyPassword();
 });
 
-Then(
-    'I should get error stating username field and password field are empty',
-    () => {
-        LoginPage.checkEmptyUsernameAndPassword();
-    }
-);
+Then('I get error stating username field and password field are empty', () => {
+    LoginPage.checkEmptyUsernameAndPassword();
+});
 
-Then('I should get error stating username is locked out', () => {
+Then('I get error stating username is locked out', () => {
     LoginPage.checUserLockedOut();
 });
 

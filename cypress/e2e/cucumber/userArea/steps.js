@@ -14,12 +14,12 @@ When('I click add to cart on item {string}', (item) => {
     /*   UserAreaPage.clickCartBtn(); */
 });
 
-When('I click on the cart button i will land on {string}', (url) => {
+When('I click on the cart button i land on {string}', (url) => {
     UserAreaPage.clickCartBtn();
     UserAreaPage.verifyUrl(url);
 });
 
-Then('I will have the checkout button visibility confirmed', () => {
+Then('I have the checkout button visibility confirmed', () => {
     UserAreaPage.checkvisibilityTrue();
 });
 
@@ -27,7 +27,7 @@ When('I click the checkout button', () => {
     UserAreaPage.clickCheckoutBtn();
 });
 
-Then('I Will land on {string}', (url) => {
+Then('I land on {string}', (url) => {
     UserAreaPage.verifyUrl(url);
 });
 When(
@@ -51,7 +51,7 @@ When('I click Finish button and land on the {string}', (url) => {
     UserAreaPage.verifyUrl(url);
 });
 
-When('I will have have a message :{string}', (message) => {
+When('I have have a message :{string}', (message) => {
     UserAreaPage.confirmCheckoutMessage(message);
 });
 
@@ -59,7 +59,7 @@ When('I click Back Home button', () => {
     UserAreaPage.clickCheckoutBackHomeBtn();
 });
 
-Then('I will be in {string}', (url) => {
+Then('I be in {string}', (url) => {
     UserAreaPage.verifyUrl(url);
 });
 
@@ -79,7 +79,7 @@ When(
     }
 );
 
-Then('I will have the checkout button invisble', () => {
+Then('I have the checkout button invisble', () => {
     UserAreaPage.checkvisibilityFalse();
 });
 

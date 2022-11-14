@@ -1,6 +1,4 @@
 
-allure-report/
-allure-results/
 .DS_Store
 cypress/.DS_Store
 cypress/screenshots/
@@ -9,3 +7,6 @@ cypress/results/
 node_modules/
 .env
 *.war
+allure-report/
+allure-results/
+
