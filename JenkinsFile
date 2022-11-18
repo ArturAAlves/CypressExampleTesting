@@ -19,7 +19,9 @@ pipeline {
                 steps {
                     echo 'testing..'
                     bat 'npm i'
+                    bat 'npm run allure:clean'
                     bat 'npx cypress run %FEATUREFILE% --env %ENV%allure=true --browser %BROWSERS%'
+                    bat 'npm run allure:report'
                 }
         }
         stage('Deploy') {
