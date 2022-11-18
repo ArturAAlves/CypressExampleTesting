@@ -19,7 +19,7 @@ pipeline {
                 steps {
                     echo 'testing..'
                     bat 'npm i'
-                    bat 'npx cypress run ${params.featureFile} --env ${params.environments}allure=true --broswser=${params.browsers}'
+                    bat 'npx cypress runc --env allure=true --broswser= ${browsers}'
                 }
         }
         stage('Deploy') {
