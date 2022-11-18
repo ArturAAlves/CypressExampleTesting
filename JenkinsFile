@@ -4,7 +4,7 @@ pipeline {
 
     parameters {
         //  string(name:'SPEC', defaultValue:'cypress/e2e/**/**', description:'enter the path that yout want to build')
-        choice(name:'environments', choices: ['', 'TAGS=@regression,', 'TAGS=@smoke,'], description:'choose enviorment'),
+        choice(name:'environments', choices: ['', 'TAGS=@regression,', 'TAGS=@smoke,'], description:'choose enviorment')
         choice(name:'browsers', choices: ['chrome', 'edge', 'firefox', 'electron'], description:'browser choices')
         /* groovylint-disable-next-line LineLength */
         //choice(name:'featureFile', choices['', '--spec cypress/e2e/cucumber/testss.feature'], description:'select feature file to run')
