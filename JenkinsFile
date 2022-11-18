@@ -3,14 +3,12 @@ pipeline {
     agent any
 
     parameters {
-        string(name:'SPEC', defaultValue:'cypress/e2e/**/**', discription:'enter the path that yout want to build')
-        choice(name:'BROWSER', choices: ['chrome', 'edge', 'firefox'], description:'browser choices')
+        //  string(name:'SPEC', defaultValue:'cypress/e2e/**/**', description:'enter the path that yout want to build')
+        choice(name:'environments', choices: ['', 'TAGS=@regression,', 'TAGS=@smoke,'], description:'choose enviorment')
+        choice(name:'browsers', choices: ['', 'chrome', 'edge', 'firefox', 'electron'], description:'browser choices')
+        /* groovylint-disable-next-line LineLength */
+        choices(name:'featureFile', choices['', '--spec cypress/e2e/cucumber/testss.feature'], description:'select feature file to run')
     }
-
-    options {
-        ansiCOlor('xterm')
-    }
-
     stages {
         stage('Build') {
             steps {
@@ -18,14 +16,11 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
-                echo 'Testing..'
-
                 steps {
+                    echo 'testing..'
                     bat 'npm i'
-                    bat 'npx cypress run --browser=${BROWSER} --env TAGS=@smoke,allure=true'
+                    bat 'npx cypress run ${featureFile} --env ${environments}allure=true --broswser=${browsers}'
                 }
-            }
         }
         stage('Deploy') {
             steps {
