@@ -3,8 +3,8 @@ pipeline {
     agent any
 
     parameters {
-        string(name:'SPEC', defaultValue:'cypress/e2e/**/**', description:'enter the path that yout want to build')
-        choice(name:'BROWSER', choices: ['chrome', 'edge', 'firefox'], description:'browser choices')
+      //  string(name:'SPEC', defaultValue:'cypress/e2e/**/**', description:'enter the path that yout want to build')
+        choice(name:'BROWSER', choices: ['','chrome', 'edge', 'firefox'], description:'browser choices')
     }
     stages {
         stage('Build') {
@@ -17,7 +17,7 @@ pipeline {
                 steps {
                       echo 'testing..'
                     bat 'npm i'
-                    bat 'npx cypress run -e allure=true --browser=${BROWSER}'
+                    bat 'cy:jenkins'
                 }             
         }
         stage('Deploy') {
