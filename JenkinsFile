@@ -15,9 +15,9 @@ pipeline {
         stage('Test') {
           
                 steps {
-                      echo 'testing..'
+                    echo 'testing..'
                     bat 'npm i'
-                    bat 'cy:jenkins'
+                    bat 'npm run cy:jenkins'
                 }             
         }
         stage('Deploy') {
