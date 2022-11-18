@@ -18,7 +18,7 @@ pipeline {
 
                 steps {
                     bat 'npm i'
-                    bat 'npx cypress run --browser=${BROWSER} --env TAGS=@smoke,allure=true'
+                    bat 'npx cypress run --browser=${BROWSER} -e allure=true'
                 }
             }
         }
