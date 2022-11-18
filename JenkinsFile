@@ -4,13 +4,8 @@ pipeline {
 
     parameters {
         string(name:'SPEC', defaultValue:'cypress/e2e/**/**', discription:'enter the path that yout want to build')
-        choice(name:'BROWSER', choices: ['chrome', 'edge', 'firefox'], description:'browser choices')
+        choice(name:'BROWSER', choices: ['chrome', 'edge', 'firefox'], discription:'browser choices')
     }
-
-    options {
-        ansiCOlor('xterm')
-    }
-
     stages {
         stage('Build') {
             steps {
