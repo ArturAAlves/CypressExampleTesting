@@ -16,9 +16,12 @@
         "cy:cucumber:cucumber": "npx cypress run --config specPattern=cypress/e2e/cucumber/*.feature,excludeSpecPattern=*.js --env allure=true",
         "s:jenkins": "java -jar jenkins.war --enable-future-java",
         "cy:custom": "npx cypress run --spec cypress/e2e/cucumber/testss.feature",
-        "clean": "if exist allure-results rmdir /q /s allure-results",
+        "allure:clean": "if exist allure-results rmdir /q /s allure-results",
         "cy:jenkins": "npx cypress run --spec cypress/e2e/cucumber/testss.feature --env tags=@smoke,allure=true --browser chrome && npm run allure:report",
-        "cy:jenk": "npm run clean && npm run cy:jenkins && npm run allure:report && allure open"
+        "cy:jenk": "npm run clean && npm run cy:jenkins && npm run allure:report && allure open",
+        "cy:regression": "npx cypress run --spec cypress/e2e/cucumber/testss.feature --env TAGS=@smoke,allure=true",
+        "cy:full": "npx cypress run --env TAGS=@regression allure=true",
+        "cy:r": "npx cypress run"
     },
     "devDependencies": {
         "@badeball/cypress-cucumber-preprocessor": "12.1.0",
@@ -38,5 +41,8 @@
     },
     "html": {
         "enabled": true
+    },
+    "env": {
+        "TAGS": "not @ignore"
     }
 }
