@@ -13,14 +13,16 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
-                echo 'Testing..'
-
+          
                 steps {
                     bat 'npm i'
                     bat 'npx cypress run -e allure=true --browser=${BROWSER}'
                 }
-            }
+                
+                 steps {
+                echo 'testing..'
+                  }
+         
         }
         stage('Deploy') {
             steps {
