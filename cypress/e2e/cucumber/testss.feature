@@ -14,8 +14,6 @@ Feature: User_Area_Features
         And I should land Sucessfully on "https://www.saucedemo.com/inventory.html"
         Then I click logout and successfully return to "https://www.saucedemo.com"
 
-
-    @regression
     Scenario: Try login with wrong username
         Given I access "https://www.saucedemo.com" page Sucessfully
         When I fill username field with "wrongusername" and and password field "secret_sauce" and click login btn

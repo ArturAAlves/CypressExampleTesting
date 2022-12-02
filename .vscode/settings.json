@@ -11,5 +11,8 @@
     "eslint.lintTask.enable": true,
     "[feature]": {
         "editor.defaultFormatter": "alexkrechik.cucumberautocomplete"
+    },
+    "[groovy]": {
+        "editor.defaultFormatter": "NicolasVuillamy.vscode-groovy-lint"
     }
 }
